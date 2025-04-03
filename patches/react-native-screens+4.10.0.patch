@@ -1,0 +1,19 @@
+diff --git a/node_modules/react-native-screens/android/build.gradle b/node_modules/react-native-screens/android/build.gradle
+index 872d44e..2d91512 100644
+--- a/node_modules/react-native-screens/android/build.gradle
++++ b/node_modules/react-native-screens/android/build.gradle
+@@ -80,8 +80,13 @@ if (isRunningInContextOfScreensRepo()) {
+ }
+ 
+ if (isNewArchitectureEnabled()) {
+-    apply plugin: "com.facebook.react"
++    try {
++        apply plugin: "com.facebook.react"
++    } catch (Exception e) {
++        logger.warn("[react-native-screens] Skipping 'com.facebook.react' plugin because it was not found.")
++    }
+ }
++
+ apply plugin: 'com.android.library'
+ apply plugin: 'kotlin-android'
+ 

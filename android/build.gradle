@@ -11,13 +11,8 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:7.4.2")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        // ✅ Add this if not using new plugin management (but you are, so it’s optional here)
-        // classpath("com.facebook.react:react-native-gradle-plugin")
-    }
-
-    repositories {
-        google()
-        mavenCentral()
     }
 }
+
+// ✅ Remove `allprojects { repositories { ... } }` entirely
 
